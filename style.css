@@ -1,0 +1,26 @@
+* {
+  text-align: center;
+}
+
+#main {
+  background: url(images/image2.jpg) center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: table;
+}
+#time {
+  height: 100vh;
+  color: white;
+  font-size: 8rem;
+  font-weight: bold;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#day {
+  font-size: 4rem;
+  position: relative;
+  top: 4rem;
+  left: 15rem;
+}
