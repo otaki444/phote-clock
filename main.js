@@ -19,12 +19,15 @@ $(function(){
 // 時間を取得
 function showClock() {
     let time = new Date(); // 現在の日時を取得
-    let month = time.getMonth();
-    let day = time.getDate();
-    document.getElementById('day').innerHTML = `${month} 月 ${day} 日`;
+
+    let month = time.getMonth(); // 月
+    let day = time.getDate(); // 日
+
     let hour = setNumber(time.getHours()); // 時
     let min  = setNumber(time.getMinutes()); // 分
     let sec  = setNumber(time.getSeconds()); // 秒
+
+    document.getElementById('day').innerHTML = `${month} 月 ${day} 日`;
     document.getElementById('hour').innerHTML = hour;
     document.getElementById('minute').innerHTML = min;
     document.getElementById('second').innerHTML = sec;
