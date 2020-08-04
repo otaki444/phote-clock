@@ -51,5 +51,17 @@ function slide(){
     document.getElementById('main').style.cssText = `background: url(${pics[picsNum]}) center; background-size: cover;`;
 
 }
-// 3秒ごとに更新
+// 60秒ごとに更新
 setInterval(slide, 60000);
+
+const touch = document.querySelector('#touch');
+touch.addEventListener('click', (event) => {
+    // フルスクリーン表示にする
+    if (document.body.requestFullscreen) {
+        document.body.requestFullscreen();
+    } else if (document.body.webkitRequestFullscreen) {
+        // safari chrome
+        document.body.webkitRequestFullscreen();
+    }
+});
+
