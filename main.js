@@ -54,14 +54,35 @@ function slide(){
 // 60秒ごとに更新
 setInterval(slide, 60000);
 
-const touch = document.querySelector('#touch');
-touch.addEventListener('click', (event) => {
+const full = document.querySelector('#fullBtn');
+const release = document.querySelector('#releaseBtn');
+document.getElementById('releaseBtn').style.display="none";
+
+full.addEventListener('click', (event) => {
     // フルスクリーン表示にする
     if (document.body.requestFullscreen) {
         document.body.requestFullscreen();
+        document.getElementById('fullBtn').style.display="none";
+        document.getElementById('releaseBtn').style.display="block";
     } else if (document.body.webkitRequestFullscreen) {
         // safari chrome
         document.body.webkitRequestFullscreen();
+        document.getElementById('fullBtn').style.display="none";
+        document.getElementById('releaseBtn').style.display="block";
+    }
+});
+
+release.addEventListener('click', (event) => {
+    // フルスクリーン解除
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+        document.getElementById('releaseBtn').style.display="none";
+        document.getElementById('fullBtn').style.display="block";
+    } else if (document.webkitCancelFullScreen) {
+        // safari chrome
+        document.webkitCancelFullScreen();
+        document.getElementById('releaseBtn').style.display="none";
+        document.getElementById('fullBtn').style.display="block";
     }
 });
 
