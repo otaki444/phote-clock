@@ -37,18 +37,11 @@ function showClock() {
 setInterval('showClock()', 1000);
 
 // 背景画像の変更
-const pics = ['images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg', 'images/image4.jpg'];
-let picsNum = -1;
-
 function slide(){
-    // 4枚の画像を使用するため、0~3を繰り返す処理
-    if (picsNum === 3){
-        picsNum = 0;
-    } else {
-        picsNum ++;
-    }
+    // 背景画像をランダムで表示(0~9の10枚の中からランダムで取得)
+    picsNum = Math.floor(Math.random()* 9);
     //「main」idのcssを更新
-    document.getElementById('main').style.cssText = `background: url(${pics[picsNum]}) center; background-size: cover;`;
+    document.getElementById('main').style.cssText = `background: url(images/image${[picsNum]}.jpg) center; background-size: cover;`;
 
 }
 // 60秒ごとに更新
